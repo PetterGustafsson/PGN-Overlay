@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Overlay with Centered Control</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .background-image {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .overlay {
+            position: absolute;
+            transform-origin: center; /* Updated to rotate around the center */
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-image" id="backgroundImage" style="background-image: url('https://i.imgur.com/845XZxa.jpg');">
+    <img src='https://i.imgur.com/nchkKaQ.png' class="overlay" id="overlayImage" style="width: 100px; height: auto;">
+</div>
+
+<div style="position: fixed; top: 10px; left: 50%; width: 300px; background: #fff; padding: 10px;">
+    <div>
+        <label for="xPosition">X Position:</label>
+        <input type="range" id="xPosition" min="-100" max="1500" value="0">
+        <span id="xPositionValue">0</span>
+    </div>
+    <div>
+        <label for="yPosition">Y Position:</label>
+        <input type="range" id="yPosition" min="0" max="500" value="0">
+        <span id="yPositionValue">0</span>
+    </div>
+    <div>
+        <label for="scale">Scale:</label>
+        <input type="range" id="scale" min="0.1" max="25" step="0.1" value="1">
+        <span id="scaleValue">1</span>
+    </div>
+    <div>
+        <label for="rotation">Rotation:</label>
+        <input type="range" id="rotation" min="-180" max="180" value="0">
+        <span id="rotationValue">0</span>
+    </div>
+    <div>
+        <label for="pitch">Pitch:</label>
+        <input type="range" id="pitch" min="-180" max="180" value="0">
+        <span id="pitchValue">0</span>
+    </div>
+    <div>
+        <label for="yaw">Yaw:</label>
+        <input type="range" id="yaw" min="-180" max="180" value="0">
+        <span id="yawValue">0</span>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
